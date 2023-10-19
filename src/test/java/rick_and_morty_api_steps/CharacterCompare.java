@@ -4,11 +4,10 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.json.JSONObject;
 
-import static rick_and_morty_api_steps.GetCharacter.getCharacter;
 import static rick_and_morty_api_steps.GetInEpisodelastCharactersNumber.getInEpisodeLastCharactersNumber;
-import static web_hooks.WebHooks.saveMessage;
+import static hooks.Hooks.saveMessage;
 
-public class CharacterCompare {
+public class CharacterCompare extends GetCharacter {
 
     private static JSONObject characterJson1;
     private static JSONObject characterJson2;

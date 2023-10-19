@@ -5,7 +5,7 @@ import io.restassured.specification.RequestSpecification;
 import org.json.JSONObject;
 import request_specification_and_response.RequestSpecificationAndResponseTests;
 
-import static request_specification_and_response.AssertionsStatusCodeBody.checkStatusCode;
+import static request_specification_and_response.AssertionsStatusCodeAndBody.checkStatusCode;
 import static util.Config.getProperties;
 
 public class GetInEpisodelastCharactersNumber extends RequestSpecificationAndResponseTests {

@@ -7,7 +7,7 @@ import io.cucumber.java.en.Then;
 import java.io.FileReader;
 import java.io.IOException;
 
-import static web_hooks.WebHooks.saveMessage;
+import static hooks.Hooks.saveMessage;
 
 public class UpdateJsonFile {
 

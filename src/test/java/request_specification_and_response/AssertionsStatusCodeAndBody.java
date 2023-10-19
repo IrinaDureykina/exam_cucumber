@@ -2,15 +2,13 @@ package request_specification_and_response;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
-import org.junit.jupiter.api.Assertions;
 
 import java.util.Objects;
 
 import static org.hamcrest.Matchers.*;
-import static request_specification_and_response.RequestSpecificationAndResponseTests.response;
-import static web_hooks.WebHooks.saveMessage;
+import static hooks.Hooks.saveMessage;
 
-public class AssertionsStatusCodeBody {
+public class AssertionsStatusCodeAndBody extends RequestSpecificationAndResponseTests{
 
     @When("Сверяем statusCode ответа с ожидаемым {string}")
     public static void checkStatusCode(String statusCode) {
@@ -18,7 +16,9 @@ public class AssertionsStatusCodeBody {
         int actualStatusCode = response.getStatusCode();
         String message = "Проверка StatusCode: " + expectedStatusCode + " Actual StatusCode: " + actualStatusCode;
         saveMessage("Сверяем полученный статус код с ожидаемым" ,message);
-        Assertions.assertEquals(expectedStatusCode, actualStatusCode, "StatusCode не соответствует ожидаемому значению");
+        response
+                .then()
+                .statusCode(expectedStatusCode);
     }
 
     @When("Сверяем body ответа с ожидаемым {string}")
@@ -53,9 +53,15 @@ public class AssertionsStatusCodeBody {
 
     @And("Сверяем ответ с ожидаемым значением полей name : {string} и job: {string}")
     public static void checkBody(String expectedName, String expectedJob) {
-        String message = "Проверяем Поле 'name' и Поле 'job' на соответствие ожидаемым значениям- 'name': " + expectedName + " 'job': " + expectedJob;
-        saveMessage("Проверяем поля ответа ", message);
-        Assertions.assertEquals(expectedName, response.path("name"), "Поле 'name' не соответствует ожидаемому значению");
-        Assertions.assertEquals(expectedJob, response.path("job"), "Поле 'job' не соответствует ожидаемому значению");
+        String actualName = response.path("name");
+        String actualjob = response.path("job");
+        String message = "Проверяем Поле 'name' на соответствие. Ожидаемое значение: " + expectedName + ", актуальное значение: " + actualName;
+        saveMessage("Проверяем поле name", message);
+        response.then()
+                .body("name", equalTo(expectedName));
+        message = "Проверяем Поле 'job' на соответствие. Ожидаемое значение: " + expectedJob + ", актуальное значение: " + actualjob;
+        saveMessage("Проверяем поле job ", message);
+        response.then()
+                .body("job", equalTo(expectedJob));
     }
 }

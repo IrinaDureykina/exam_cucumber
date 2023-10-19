@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
         glue = {"reqres_steps",
                 "request_specification_and_response",
                 "rick_and_morty_api_steps",
-                "web_hooks"},
+                "hooks"},
         snippets = CucumberOptions.SnippetType.UNDERSCORE,
         plugin = {"pretty",
                 "io.qameta.allure.cucumber6jvm.AllureCucumber6Jvm",

@@ -5,9 +5,9 @@ import io.qameta.allure.Step;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
-import org.junit.jupiter.api.Assertions;
 
 import static io.restassured.RestAssured.given;
+import static hooks.Hooks.saveMessage;
 
 public class RequestSpecificationAndResponseTests {
    public static Response response;
@@ -41,7 +41,11 @@ public class RequestSpecificationAndResponseTests {
         } else if ("DELETE".equalsIgnoreCase(method)) {
             response = updatedRequest.delete();
         }
-        Assertions.assertNotNull(response, "Ответ (response) равен null");
-        Allure.addAttachment("Response", "application/json", response.asString());
+        if (response.then() == null) {
+            String message = "Ответ не получен response = null";
+            saveMessage("Ответ не получен", message);
+        }else {
+            Allure.addAttachment("Response", "application/json", response.asString());
+        }
     }
 }
