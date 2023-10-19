@@ -1,4 +1,4 @@
-package request_specification_and_response;
+package common_steps;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
@@ -8,7 +8,7 @@ import java.util.Objects;
 import static org.hamcrest.Matchers.*;
 import static hooks.Hooks.saveMessage;
 
-public class AssertionsStatusCodeAndBody extends RequestSpecificationAndResponseTests{
+public class AssertionsStatusCodeAndBody extends RequestSpecificationAndResponseGet {
 
     @When("Сверяем statusCode ответа с ожидаемым {string}")
     public static void checkStatusCode(String statusCode) {

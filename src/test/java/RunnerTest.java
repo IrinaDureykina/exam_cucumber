@@ -5,7 +5,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources/feature/",
         glue = {"reqres_steps",
-                "request_specification_and_response",
+                "common_steps",
                 "rick_and_morty_api_steps",
                 "hooks"},
         snippets = CucumberOptions.SnippetType.UNDERSCORE,

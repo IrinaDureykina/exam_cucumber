@@ -3,12 +3,12 @@ package rick_and_morty_api_steps;
 import io.qameta.allure.Step;
 import io.restassured.specification.RequestSpecification;
 import org.json.JSONObject;
-import request_specification_and_response.RequestSpecificationAndResponseTests;
+import common_steps.RequestSpecificationAndResponseGet;
 
-import static request_specification_and_response.AssertionsStatusCodeAndBody.checkStatusCode;
+import static common_steps.AssertionsStatusCodeAndBody.checkStatusCode;
 import static util.Config.getProperties;
 
-public class GetInEpisodelastCharactersNumber extends RequestSpecificationAndResponseTests {
+public class GetInEpisodelastCharactersNumber extends RequestSpecificationAndResponseGet {
 
     @Step("Получение Id последнего персонажа в эпизоде Id: \"{idEpisode}\"")
     public static String getInEpisodeLastCharactersNumber(String keyUrl, String endpoint, String method, String idEpisode) {

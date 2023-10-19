@@ -1,4 +1,4 @@
-package request_specification_and_response;
+package common_steps;
 
 import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
@@ -9,7 +9,7 @@ import io.restassured.specification.RequestSpecification;
 import static io.restassured.RestAssured.given;
 import static hooks.Hooks.saveMessage;
 
-public class RequestSpecificationAndResponseTests {
+public class RequestSpecificationAndResponseGet {
    public static Response response;
     @Step("Составление RequestSpecification по: {url}")
     public static RequestSpecification requestSpecificationTests(String url) {

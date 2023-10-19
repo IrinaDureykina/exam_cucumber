@@ -9,7 +9,7 @@ Feature: : Reqres Tests Api
     When Сверяем body ответа с ожидаемым "reqres.in"
 
   @СозданиеПользователя
-  Scenario:Тест создания пользователя: изменяем Json файл: изменяя имя и добавляя поле job и отправляем запрос
+  Scenario:Тест Создания пользователя: изменяем Json файл: изменяя имя и добавляя поле job и отправляем запрос
     Then Изменяем в файле "src/test/resources/reqres/reqres.json" name на: "Tomato" и добавляем поле job с значением "Eat maket"
     When Отправляем запрос на сайт "reqres.in",  c endpoint = "/api/users",  method = "POST" для создание пользователя
     When Сверяем statusCode ответа с ожидаемым "201"
