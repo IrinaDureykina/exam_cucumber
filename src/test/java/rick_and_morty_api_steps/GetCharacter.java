@@ -1,9 +1,9 @@
 package rick_and_morty_api_steps;
 
+import common_steps.RequestSpecificationAndResponseGet;
 import io.qameta.allure.Step;
 import io.restassured.specification.RequestSpecification;
 import org.json.JSONObject;
-import common_steps.RequestSpecificationAndResponseGet;
 
 import static common_steps.AssertionsStatusCodeAndBody.checkStatusCode;
 import static util.Config.getProperties;

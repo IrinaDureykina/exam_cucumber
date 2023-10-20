@@ -1,8 +1,8 @@
 package reqres_steps;
 
+import common_steps.RequestSpecificationAndResponseGet;
 import io.cucumber.java.en.When;
 import io.restassured.specification.RequestSpecification;
-import common_steps.RequestSpecificationAndResponseGet;
 
 import static reqres_steps.UpdateJsonFile.bodyCreateUserReqres;
 import static util.Config.getProperties;

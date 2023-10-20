@@ -5,8 +5,8 @@ import io.cucumber.java.en.When;
 
 import java.util.Objects;
 
-import static org.hamcrest.Matchers.*;
 import static hooks.Hooks.saveMessage;
+import static org.hamcrest.Matchers.*;
 
 public class AssertionsStatusCodeAndBody extends RequestSpecificationAndResponseGet {
 

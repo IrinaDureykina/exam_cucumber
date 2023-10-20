@@ -4,8 +4,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.json.JSONObject;
 
-import static rick_and_morty_api_steps.GetInEpisodelastCharactersNumber.getInEpisodeLastCharactersNumber;
 import static hooks.Hooks.saveMessage;
+import static rick_and_morty_api_steps.GetInEpisodelastCharactersNumber.getInEpisodeLastCharactersNumber;
 
 public class StepDefinition extends GetCharacter {
 

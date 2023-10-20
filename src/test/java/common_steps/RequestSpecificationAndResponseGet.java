@@ -6,8 +6,8 @@ import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 
-import static io.restassured.RestAssured.given;
 import static hooks.Hooks.saveMessage;
+import static io.restassured.RestAssured.given;
 
 public class RequestSpecificationAndResponseGet {
    public static Response response;
