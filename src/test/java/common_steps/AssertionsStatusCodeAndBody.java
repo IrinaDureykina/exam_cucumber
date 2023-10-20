@@ -47,7 +47,7 @@ public class AssertionsStatusCodeAndBody extends RequestSpecificationAndResponse
                     .body("data[0].id", equalTo(1))
                     .body("data[0].pantone_value", equalTo("15-4020"));
         }
-        String massage = "Проверка Body сайта: "+ keyUrl + "прошла успешно body:"+response.getBody().asString();
+        String massage = "Проверка Body сайта: "+ keyUrl + ", прошла успешно body:"+response.getBody().asString();
         saveMessage("Проверка Body сайта: "+ keyUrl, massage);
     }
 

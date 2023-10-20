@@ -7,7 +7,7 @@ import org.json.JSONObject;
 import static rick_and_morty_api_steps.GetInEpisodelastCharactersNumber.getInEpisodeLastCharactersNumber;
 import static hooks.Hooks.saveMessage;
 
-public class CharacterCompare extends GetCharacter {
+public class StepDefinition extends GetCharacter {
 
     private static JSONObject characterJson1;
     private static JSONObject characterJson2;
