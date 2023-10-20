@@ -9,7 +9,7 @@ import static util.Config.getProperties;
 
 public class CreateUsersRequest extends RequestSpecificationAndResponseGet {
 
-    @When("Отправляем запрос на сайт {string},  c endpoint = {string},  method = {string} для создание пользователя")
+    @When("Отправляем запрос на сайт {string},  c endpoint = {string},  method = {string} для создания пользователя")
     public static void createUsersRequest(String keyUrl, String endpoint, String method ) {
         RequestSpecification request = requestSpecificationTests(getProperties(keyUrl));
         responseGet(request, bodyCreateUserReqres, endpoint, method);
